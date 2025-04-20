@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom styles for the form */
+.form-header {
+  @apply bg-gradient-to-r from-blue-700 to-blue-600 text-white py-3 px-4 rounded-t-md font-bold text-lg;
+}
+
+/* Input focus effects */
+input:focus,
+button:focus,
+select:focus,
+textarea:focus {
+  @apply ring-2 ring-blue-300 outline-none transition-all duration-200;
+}
+
+/* Hover effects */
+.hover-effect {
+  @apply transition-all duration-200 hover:shadow-md hover:border-blue-300;
+}
+
+/* Card styling */
+.card-enhanced {
+  @apply border-blue-200 shadow-md hover:shadow-lg transition-all duration-300;
+}
+
+/* Button styling */
+.btn-primary {
+  @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200;
+}
+
+.btn-secondary {
+  @apply bg-white hover:bg-blue-50 border border-blue-200 hover:border-blue-400 text-blue-700 font-medium py-2 px-4 rounded-md transition-colors duration-200;
+}
+
+/* Label styling */
+.label-enhanced {
+  @apply text-blue-700 font-medium mb-1 block transition-colors duration-200;
+}
+
+/* Checkbox and radio styling */
+.checkbox-enhanced {
+  @apply text-blue-600 border-blue-300 rounded focus:ring-blue-500;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    background: white !important;
+  }
+
+  .page-break {
+    page-break-before: always;
+  }
+
+  .card-enhanced,
+  .form-header,
+  input,
+  select,
+  textarea {
+    box-shadow: none !important;
+    border-color: #ccc !important;
+  }
+
+  .form-header {
+    background: #1d4ed8 !important;
+    color: white !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
+/* Animation effects */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-blue-500;
+}

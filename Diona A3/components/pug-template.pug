@@ -1,0 +1,308 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Criminal Risk Assessment Request
+    style.
+      body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .header h1 {
+        color: #1d4ed8;
+        margin-bottom: 5px;
+      }
+      .header p {
+        margin: 0;
+        font-size: 16px;
+      }
+      .form-section {
+        border: 1px solid #bfdbfe;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+      .section-header {
+        background-color: #1d4ed8;
+        color: white;
+        padding: 10px 15px;
+        font-weight: bold;
+        font-size: 18px;
+      }
+      .section-content {
+        padding: 20px;
+      }
+      .consent-text {
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+      .consent-text p {
+        margin-bottom: 10px;
+      }
+      .consent-text .bold {
+        font-weight: bold;
+      }
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        background-color: #f8fafc;
+        padding: 15px;
+        border-radius: 5px;
+      }
+      .form-row {
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        font-size: 14px;
+      }
+      input[type="text"],
+      input[type="date"],
+      input[type="email"],
+      input[type="tel"] {
+        width: 100%;
+        padding: 8px 12px;
+        border: 1px solid #d1d5db;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+      .checkbox-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .checkbox-item {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .signature-area {
+        border: 1px dashed #d1d5db;
+        padding: 10px;
+        margin-top: 5px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+      }
+      .note {
+        background-color: #fef9c3;
+        border: 1px solid #fde047;
+        padding: 10px;
+        border-radius: 4px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 20px;
+      }
+      .buttons {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-top: 20px;
+      }
+      button {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .submit-btn {
+        background-color: #1d4ed8;
+        color: white;
+      }
+      .print-btn {
+        background-color: white;
+        border: 1px solid #d1d5db;
+      }
+      @media print {
+        .buttons {
+          display: none;
+        }
+        body {
+          font-size: 12pt;
+        }
+        .form-section {
+          break-inside: avoid;
+          page-break-inside: avoid;
+        }
+      }
+  body
+    .header
+      h1 MANITOBA FAMILIES - CRIMINAL RISK ASSESSMENT UNIT
+      p Child Protection Branch
+      p 201 - 114 Garry Street
+      p Winnipeg, Manitoba R3C 4V5
+    
+    .form-section
+      .section-header CONSENT FOR CRIMINAL RISK ASSESSMENT AND RELEASE OF INFORMATION
+      .section-content
+        .consent-text
+          p As a person who has, or may have, care, custody, control or charge of a child in receipt of services under The Child and Family Services Act, I authorize the Criminal Risk Assessment Unit of Manitoba Families' Child Protection Branch ("CRAU") to conduct enquiries of the Winnipeg Police Service (WPS), the RCMP and other law enforcement agencies necessary to assess the risk that l may endanger the life, health or emotional wellbeing of a child.
+          p I understand that this information is requested by (CFS Agency) for the purposes of, and in accordance with, s. 18.4(1.1) of The Child and Family Services Act, and may include a criminal record, criminal and Provincial Act convictions, orders or charges, other involvement/contact with law enforcement (including non-conviction information) or other information.
+          p.bold I authorize the disclosure of said information to CRAU and an authorized Child and Family Services Agency designate or designates.
+          p.bold I also authorize the disclosure of the personal identifying information set out below to CRAU, the WPS, RCMP and other law enforcement agencies for the purpose of completing a Criminal Risk Assessment.
+          p I understand that the results of this Criminal Risk Assessment are confidential, and may not be provided to me, but may be disclosed in accordance with s.76 of the Child and Family Services Act.
+        
+        .form-row
+          label(for="date") Date:
+          input(type="date", id="date", name="date")
+        
+        .form-row
+          label(for="signature") Signature of person being assessed:
+          .signature-area Your signature here
+        
+        h3(style="text-align: center; margin-top: 20px;") PLEASE PRINT CLEARLY
+        
+        .form-grid
+          .form-row
+            label(for="firstName") 1. FIRST NAME:
+            input(type="text", id="firstName", name="firstName")
+          
+          .form-row
+            label(for="secondName") 2. SECOND NAME:
+            input(type="text", id="secondName", name="secondName")
+          
+          .form-row
+            label(for="lastName") 3. LAST NAME:
+            input(type="text", id="lastName", name="lastName")
+          
+          .form-row
+            label(for="dob") 4. DATE OF BIRTH:
+            input(type="date", id="dob", name="dob")
+          
+          .form-row
+            label 5. GENDER:
+            .checkbox-group
+              .checkbox-item
+                input(type="radio", id="male", name="gender", value="male")
+                label(for="male", style="display: inline; font-weight: normal;") MALE
+              .checkbox-item
+                input(type="radio", id="female", name="gender", value="female")
+                label(for="female", style="display: inline; font-weight: normal;") FEMALE
+          
+          .form-row
+            label(for="otherLastNames") 6. OTHER LAST NAMES USED:
+            input(type="text", id="otherLastNames", name="otherLastNames")
+          
+          .form-row
+            label(for="otherFirstNames") 7. OTHER FIRST NAMES USED/ALSO GOES BY:
+            input(type="text", id="otherFirstNames", name="otherFirstNames")
+        
+        .form-row
+          label(for="currentAddress") 8. CURRENT ADDRESS (include postal code):
+          input(type="text", id="currentAddress", name="currentAddress")
+        
+        .form-grid
+          .form-row
+            label(for="currentPhone") 9. CURRENT PH#s:
+            input(type="tel", id="currentPhone", name="currentPhone")
+          
+          .form-row
+            label(for="birthPlace") 10. City/Province or Country of Birth:
+            input(type="text", id="birthPlace", name="birthPlace")
+        
+        .form-row
+          label *PLEASE NOTE: Subject's name must be identified with TWO PIECES OF IDENTIFICATION (MB D/L & photo ID is preferable):
+          .checkbox-group
+            .checkbox-item
+              input(type="checkbox", id="birthCertificate", name="identification", value="birthCertificate")
+              label(for="birthCertificate", style="display: inline; font-weight: normal;") Birth Certificate
+            .checkbox-item
+              input(type="checkbox", id="socialInsurance", name="identification", value="socialInsurance")
+              label(for="socialInsurance", style="display: inline; font-weight: normal;") Social Insurance Card
+            .checkbox-item
+              input(type="checkbox", id="healthCard", name="identification", value="healthCard")
+              label(for="healthCard", style="display: inline; font-weight: normal;") Manitoba Health Card
+            .checkbox-item
+              input(type="checkbox", id="treatyCard", name="identification", value="treatyCard")
+              label(for="treatyCard", style="display: inline; font-weight: normal;") Treaty Card
+            .checkbox-item
+              input(type="checkbox", id="otherID", name="identification", value="otherID")
+              label(for="otherID", style="display: inline; font-weight: normal;") Other (specify ID):
+              input(type="text", id="otherIDSpecify", name="otherIDSpecify", style="width: 150px; margin-left: 5px;")
+        
+        .form-row
+          label(for="driverLicense") MB Driver's License with Photo - licence number (section 4d on licence):
+          input(type="text", id="driverLicense", name="driverLicense")
+    
+    .form-section
+      .section-header AGENCY INFORMATION
+      .section-content
+        .consent-text
+          p.bold IT IS IMPORTANT THAT THE CFS AGENCY DESIGNATE READS AND UNDERSTANDS THE FOLLOWING:
+          p The identifying information supplied on page 1 will be researched through the Canadian Police Information Centre (CPIC) and Winnipeg Police Service Records Management System (NICHE). The research will NOT include a vulnerable sector search or information in respect of pardons, which information may impact the results of a risk assessment. Criminal Convictions are strictly confidential and cannot be shared without written authorization of the person involved. Personal Information is governed under Section 8 of the Privacy Act (Federal Statute).
+          p.bold PLEASE NOTE that record information is based on NAME AND DATE OF BIRTH SEARCH ONLY and does not necessarily indicate subject involvement.
+          p Verification can only be provided through the submission of fingerprints to the local law enforcement agency for the area in which the person being assessed resides. In the case of dispute regarding the identity of the person being assessed, that person is advised to attend any RCMP Detachment; Winnipeg Police Service, 245 Smith Street, Winnipeg, Manitoba; Brandon Police Service, 1340 10th Street, Brandon, Manitoba; or local Police Agency. A fee for service is required.
+        
+        p.bold(style="margin-top: 20px;") NOTE – SECTIONS MARKED WITH AN ASTERISK (*) ARE REQUIRED
+        
+        .form-grid
+          .form-row
+            label(for="agencyName") *NAME OF AGENCY SUBMITTING REQUEST:
+            input(type="text", id="agencyName", name="agencyName", required)
+          
+          .form-row
+            label *REASON FOR RISK ASSESSMENT:
+            div(style="margin-top: 5px;")
+              p(style="margin: 5px 0; font-size: 14px;") With or Without Consent:
+              .checkbox-item
+                input(type="checkbox", id="childProtection", name="reasonForAssessment", value="childProtection")
+                label(for="childProtection", style="display: inline; font-weight: normal;") Child Protection Concerns
+              
+              p(style="margin: 10px 0 5px; font-size: 14px;") Must have consent:
+              .checkbox-item
+                input(type="checkbox", id="placeOfSafety", name="reasonForAssessment", value="placeOfSafety")
+                label(for="placeOfSafety", style="display: inline; font-weight: normal;") Place of Safety
+              .checkbox-item
+                input(type="checkbox", id="kinship", name="reasonForAssessment", value="kinship")
+                label(for="kinship", style="display: inline; font-weight: normal;") Kinship or Customary Care Agreement
+          
+          .form-row
+            label(for="assignedWorker") *ASSIGNED WORKER:
+            input(type="text", id="assignedWorker", name="assignedWorker", required)
+          
+          .form-row
+            label(for="lastAssessmentDate") DATE OF LAST CRIMINAL RISK ASSESSMENT (if known):
+            input(type="date", id="lastAssessmentDate", name="lastAssessmentDate")
+          
+          .form-row
+            label(for="submittingDesignate") *SUBMITTING DESIGNATE:
+            input(type="text", id="submittingDesignate", name="submittingDesignate", required)
+          
+          .form-row
+            label(for="designatePhone") *DESIGNATE PH#:
+            input(type="tel", id="designatePhone", name="designatePhone", required)
+          
+          .form-row
+            label(for="designateEmail") *DESIGNATE EMAIL#:
+            input(type="email", id="designateEmail", name="designateEmail", required)
+          
+          .form-row
+            label(for="designateFax") DESIGNATE FAX#:
+            input(type="tel", id="designateFax", name="designateFax")
+          
+          .form-row
+            label(for="requestDate") *REQUEST DATE:
+            input(type="date", id="requestDate", name="requestDate", required)
+        
+        .note NOTE: The assessment completed by the Criminal Risk Assessment Unit of the Department of Families Child Protection Branch does not replace a criminal records check.
+    
+    .buttons
+      button.print-btn(type="button", onclick="window.print()") Print Form
+      button.submit-btn(type="submit") Submit Form
